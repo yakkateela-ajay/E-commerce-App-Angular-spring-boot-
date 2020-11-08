@@ -1,0 +1,38 @@
+<div class="navigation">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-transparent">
+      <a class="navbar-brand" routerLink="/user-interface"><img src="assets/realme2.png"
+          alt="" height="35px" >
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        
+          <div class="navbar-nav ml-auto" *ngIf="loginComponent.isUserLoggedIn()">
+              <a class="nav-item nav-link active" routerLink="/user-interface">Home<span class="sr-only">(current)</span></a>           
+              <a class="nav-item nav-link active" routerLink="/realme-phones">Realme Smartphones<span class="sr-only">(current)</span></a>           
+              <a class="nav-item nav-link active" routerLink="/narzo-phones">Narzo Smartphones<span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link active" routerLink="/add-product">Accessories<span class="sr-only">(current)</span></a>           
+              <a class="nav-item nav-link active" routerLink="/view-all-product">Audio<span class="sr-only">(current)</span></a>          
+              <a class="nav-item nav-link active" routerLink="/view-all-product">Cart<span class="sr-only">(current)</span></a>          
+              <a class="nav-item nav-link active" (click)=" onLogout()">logout<span class="sr-only">(current)</span></a>
+            
+          </div>
+           <div class="navbar-nav ml-auto" *ngIf="adminComponent.isadminloggedin()">
+              <a class="nav-item nav-link active" routerLink="/products/add-product">Add Products<span class="sr-only">(current)</span></a>           
+              <a class="nav-item nav-link active" routerLink="/products/view-all-products">View all Products<span class="sr-only">(current)</span></a>           
+              <a class="nav-item nav-link active" (click)=" adminlogout()">logout<span class="sr-only">(current)</span></a>
+            
+          </div>
+        
+          <div class="navbar-nav ml-auto" *ngIf="!loginComponent.isUserLoggedIn() && !adminComponent.isadminloggedin()">
+            <a class="nav-item nav-link active" routerLink="/login">Login<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" routerLink="/register">Register<span
+                class="sr-only">(current)</span></a>
+          </div>
+      </div>
+    </nav>
+  </div>
+</div>

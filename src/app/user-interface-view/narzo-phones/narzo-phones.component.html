@@ -1,0 +1,31 @@
+<div class="mobile">
+    <div class="sort row">     
+        <input type="text" class="form-control searchbar" placeholder="Search" [(ngModel)]="productName">
+          <button class="btn btn-outline-success button" (click)="onfilter()">Search</button>
+          <button class="btn btn-danger button" (click)="onclearfilter()">Clear</button>   
+      <div class="">
+          <button class="btn btn-primary button" (click)="onsortdirection()">sort by price</button>
+      </div>
+    </div>
+  <div class="container1 text-center">
+    <div class="row">
+      <div class="col-lg-3 col-md-6  mb-4" *ngFor="let product of productList |realmephonefilter:'Narzo Smart Phone':'productCategory' |searchFilter:searchproduct:'productName'| sort:['productPrice',sortdirection]">
+        <div class="card h-100">
+          <a (click)="gotoViewProduct(product.productId)" class="p-6 img"
+            ><img
+              class="card-img-top"
+              src="{{ product.productUrl }}"
+              alt="product image"
+          /></a>
+          <div class="card-body">
+            <p (click)="gotoViewProduct(product.productId)" href="" class="text-center">{{ product.productName }}</p>
+
+            <h5 class="text-danger price"><i class="fa fa-inr" aria-hidden="true"></i>
+              {{ product.productPrice }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

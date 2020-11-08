@@ -1,0 +1,32 @@
+.img {
+  padding: 15% 15% 6% 15%;
+  margin-top: 10px;
+}
+.mobile{
+  background-color:  whitesmoke;
+  padding: 0px;
+  margin: 0px;
+}
+.card {
+  border-radius: 0px;
+  border: 1px solid white;
+}
+.container{
+  padding:30px;
+}
+.container1{
+    margin: 20px 70px 2px 70px ;
+}
+.price{
+    margin-bottom: 37px;
+}
+.searchbar{
+    height: 42px;
+    width: 680px;
+    margin: 30px 10px 25px 170px;
+}
+.button{
+    margin-right: 10px;
+    height: 42px;
+    margin-top: 30px;
+}

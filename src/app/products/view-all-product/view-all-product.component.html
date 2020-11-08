@@ -1,0 +1,33 @@
+<div class="mobile">
+    <div class="sort container row">
+      
+        <input type="text" class="form-control" placeholder="Search" [(ngModel)]="productName">
+          <button class="btn btn-outline-success" (click)="onfilter()">Search</button>
+          <button class="btn btn-danger" (click)="onclearfilter()">Clear</button>
+         
+      
+      <div class="">
+          <button class="btn btn-primary" (click)="onsortdirection()">sort by price</button>
+      </div>
+    </div>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-lg-3 col-md-6  mb-4" *ngFor="let product of productList | filterproducts:searchproduct:'productName'| sortproducts:['productPrice',sortdirection]">
+        <div class="card h-100">
+          <a (click)="gotoViewProduct(product.productId)" class="p-6 img"
+            ><img
+              class="card-img-top"
+              src="{{ product.productUrl }}"
+              alt="product image"
+          /></a>
+          <div class="card-body">
+            <p (click)="gotoViewProduct(product.productId)" href="" class="text-center">{{ product.productName }}</p>
+
+            <h5 class="text-danger"><i class="fa fa-inr" aria-hidden="true"></i>
+              {{ product.productPrice }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
